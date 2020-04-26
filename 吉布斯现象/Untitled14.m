@@ -1,0 +1,17 @@
+t=-4:0.001:4;
+f1=sin(10*pi*t);
+f2=cos(10*pi*t);
+f3=(t>=-2)-(t>=2);
+f4=f3.*t;
+figure(1);
+plot(t,f1,t,f2,t,f4);
+figure(2);
+figure(3);
+t=1000*(1:512)/1024;
+ff1=fft(f1,1024)/1024;
+dff1=2*abs(ff1(1:512));
+ff2=fft(f2,1024)/1024;
+dff2=2*abs(ff2(1:512));
+ff4=fft(f4,1024)/1024;
+dff4=2*abs(ff4(1:512));
+plot(t,dff1,t,dff2,t,dff4)
